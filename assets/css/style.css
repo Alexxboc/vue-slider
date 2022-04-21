@@ -41,6 +41,7 @@ img {
 
 .thumbnails img {
     width: 100%;
+    filter: brightness(0.5);
 }
 
 .thumb {
@@ -62,9 +63,12 @@ img {
     background-color: rgba(255, 255, 255, 0.419);
     padding: 0.5rem;
     font-size: 25px;
+    cursor: pointer;
+    z-index: 1;
 }
 
 .active {
     border: 2.5px solid red;
+    filter: brightness() !important;
 }
 

@@ -17,6 +17,7 @@ const app = new Vue ({
     el: '#app',
     data: {
         activeImage: 0,
+        timer: 0,
         travels: [
             {
                 image: './assets/img/01.jpg',
@@ -61,10 +62,20 @@ const app = new Vue ({
                 this.activeImage = this.travels.length
             }
             this.activeImage--
-        }
+        },
+
+        activateImage() {
+            console.log('click');
+            // this.activeImage === imageIndex
+        },
+        
     }
         
         
     })
+       
+       
+
+
 
 
