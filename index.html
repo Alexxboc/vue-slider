@@ -15,29 +15,17 @@
     <div id="app">
         <div class="container">
             <div class="main_img">
-              <img src="./assets/img/01.jpg" alt="">
+              <img :src="travels[activeImage].image" alt="">
               <div class="travel_info">
-                  <h3>Svezia</h3>
-                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat obcaecati in beatae? Excepturi accusantium in, molestias necessitatibus vel esse vitae?</p>
+                  <h3>{{travels[activeImage].title}}</h3>
+                  <p>{{travels[activeImage].text}}</p>
               </div>
               <!-- /.travel_info -->
             </div>
             <!-- /.main_img -->
             <div class="thumbnails">
                 <div class="thumb">
-                  <img src="./assets/img/02.jpg" alt="">
-                </div>
-                <!-- /.thumb -->
-                <div class="thumb">
-                  <img src="./assets/img/03.jpg" alt="">
-                </div>
-                <!-- /.thumb -->
-                <div class="thumb">
-                  <img src="./assets/img/04.jpg" alt="">
-                </div>
-                <!-- /.thumb -->
-                <div class="thumb">
-                  <img src="./assets/img/05.jpg" alt="">
+                  <img :src="thumb.image" alt="" v-for="(thumb,index) in travels">
                 </div>
                 <!-- /.thumb -->
             </div>
