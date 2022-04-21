@@ -24,8 +24,13 @@
             </div>
             <!-- /.main_img -->
             <div class="thumbnails">
+                <div class="navigator">
+                    <div class="up" @click="nextImage"><i class="fa-solid fa-chevron-up" aria-hidden="true"></i></div>
+                    <div class="down" @click="prevImage"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+                </div>
+                <!-- /.navigator -->
                 <div class="thumb">
-                  <img :src="thumb.image" alt="" v-for="(thumb,index) in travels">
+                  <img :src="thumb.image" alt="" :class="activeImage === index ? 'active' : ''" v-for="(thumb,index) in travels">
                 </div>
                 <!-- /.thumb -->
             </div>
@@ -42,6 +47,8 @@
   </html>
                 
           
+                    
+                    
                 
             
                 
