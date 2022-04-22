@@ -16,32 +16,33 @@ Bonus:
 const app = new Vue ({
     el: '#app',
     data: {
+        timer: null,
         activeImage: 0,
         timer: 0,
         travels: [
             {
-                image: './assets/img/01.jpg',
-                title: 'Svezia',
+                image: 'https://imgcdn.agendadigitale.eu/wp-content/uploads/2019/03/07080955/super-mario.jpg.webp',
+                title: 'Super Mario Deluxe',
                 text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
             },
             {
-                image: './assets/img/02.jpg',
-                title: 'Svizzera',
+                image: 'https://www.giantfreakinrobot.com/wp-content/uploads/2021/07/super-mario-64.jpg',
+                title: 'Super Mario Odissey',
                 text: 'Lorem ipsum.',
             },
             {
-                image: './assets/img/03.jpg',
-                title: 'Gran Bretagna',
+                image: 'https://media-assets.vanityfair.it/photos/614c53590279228e89ab3065/16:9/w_2580,c_limit/Super-MArio-Odyssey-p.jpg',
+                title: 'Super Mario 3D World',
                 text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
             },
             {
-                image: './assets/img/04.jpg',
-                title: 'Germania',
+                image: 'https://cdn.pocket-lint.com/r/s/1200x/assets/images/145939-games-review-super-mario-party-review-image1-wv3szmrzxd.jpg',
+                title: 'Bowser Fury',
                 text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam.',
             },
             {
-                image: './assets/img/05.jpg',
-                title: 'Paradise',
+                image: 'https://leganerd.com/wp-content/uploads/2018/11/super-mario-999x666.jpg',
+                title: 'Mario Kart',
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis.',
             }
         ]
@@ -64,11 +65,26 @@ const app = new Vue ({
             this.activeImage--
         },
 
-        activateImage() {
-            console.log('click');
-            // this.activeImage === imageIndex
+        changeImage(index) {
+            // console.log('change');
+            this.activeImage = index
         },
+
+        stopPlayer() {
+            console.log('stop');
+            clearInterval(this.timer)
+        },
+
+        startPlayer() {
+            console.log('start');
+            this.timer = setInterval(this.nextImage, 2000)
+        }
         
+    },
+
+    mounted() {
+        console.log('Mounted');
+        this.startPlayer()
     }
         
         
