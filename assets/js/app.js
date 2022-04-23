@@ -18,7 +18,6 @@ const app = new Vue ({
     data: {
         timer: null,
         activeImage: 0,
-        timer: 0,
         travels: [
             {
                 image: 'https://imgcdn.agendadigitale.eu/wp-content/uploads/2019/03/07080955/super-mario.jpg.webp',
@@ -71,19 +70,19 @@ const app = new Vue ({
         },
 
         stopPlayer() {
-            console.log('stop');
+            // console.log('stop');
             clearInterval(this.timer)
         },
 
         startPlayer() {
-            console.log('start');
+            // console.log('start');
             this.timer = setInterval(this.nextImage, 2000)
         }
         
     },
 
     mounted() {
-        console.log('Mounted');
+        // console.log('Mounted');
         this.startPlayer()
     }
         
